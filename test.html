@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 显示未完成任务数
+    vm.getUnCompletedCount =function(){
+      var count = 0;
+      todoList.forEach(function(todo){
+        if(!todo.isCompleted){
+          count++;
+        }
+      });
+      return count;
+    }
+
+    // | filter:{isCompleted:status}
+    vm.status =undefined;
+    vm.showAll =function(){
+      vm.status = undefined;
+    };
+    vm.showActive =function(){
+      vm.status = false;
+    };
+    vm.showCompleted =function(){
+      vm.status = true;
+    };
+
+    
+
+  </script>
+</body>
+</html>
